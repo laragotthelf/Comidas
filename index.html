@@ -82,4 +82,5 @@ function delS(id){S.shop=S.shop.filter(x=>x.id!=id);R()}
 function buyM(t,k){let x,g,v,n;if(t=='a'){x=short().find(s=>s.k==k);g=x.g;v=x.v;n=x.name}else{x=S.shop.find(s=>s.id==k);g=x.unit;v=x.qty;n=x.name}M(`<h2>Compraste: ${e2(n)}</h2><label>Cantidad comprada (se suma al inventario)</label><div class="row"><input id="bq" type="number" min="0" value="${+v.toFixed(2)}"><select id="bu">${opts(Object.keys(U).filter(u=>U[u][0]==g),g)}</select></div><button class="b" onclick="buy('${t}','${k}','${e2(n)}','${g}')">Agregar al inventario</button>`)}
 function buy(t,k,n,g){const qt=+V('bq'),u=V('bu');if(!(qt>0))return alert('Cantidad inválida');const x=S.inv.find(i=>key(i.name,i.unit)==key(n,u));if(x)x.qty=+(x.qty+qt*U[u][1]/U[x.unit][1]).toFixed(4);else S.inv.push({id:uid(),name:n,cat:t=='m'?(S.shop.find(s=>s.id==k)||{}).cat||'otros':'otros',qty:qt,unit:u,min:0,loc:''});if(t=='m')S.shop=S.shop.filter(s=>s.id!=k);const m=`Compra: ${n} ${qt} ${u}`;S.hist.unshift({t:Date.now(),m});log(m);X();R()}
 R();
+if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
 </script></body></html>
