@@ -12,7 +12,7 @@ Es una app de un solo archivo (HTML + JS + CSS), sin dependencias ni build. Los 
 
 ## Estructura
 - `index.html`: la aplicación completa
-- `manifest.webmanifest`: datos para instalarla como app
+- `manifest.json`: datos para instalarla como app
 - `icons/`: logo (SVG y PNG)
 
 ## Reglas principales
