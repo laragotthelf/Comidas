@@ -17,3 +17,4 @@ Es una app de un solo archivo (HTML + JS + CSS), sin dependencias ni build. Los 
 
 ## Reglas principales
 Planificar no descuenta stock; solo se descuenta al marcar una comida como realizada (con confirmación y opción de deshacer). La lista de compras = necesidades de las comidas pendientes − stock físico + productos manuales.
+
